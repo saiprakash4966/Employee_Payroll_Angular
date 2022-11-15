@@ -1,0 +1,40 @@
+<div class="mainbo">
+    <div class="nobor">
+        <div>
+            <img src="../../../assets/images/logo.png" alt="">
+        </div>
+        <div>
+            <span>Employee</span><br>
+            <span>Payroll</span>
+        </div>
+    </div>
+    <div class="opecbor">
+        <div class="empcl">
+            <header>Employee Details</header>
+
+        </div>
+        <table>
+            <th>Profile</th>
+            <th>Name</th>
+            <th>gender</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>Start Date</th>
+            <th>Action</th>
+            <tr *ngFor = "let employ of allEmployee">
+                <td><img [src]="employ.profilePic" alt=""></td>
+                <td>{{employ.name}}</td>
+                <td>{{employ.gender}}</td>
+                <td>{{employ.departments}}</td>
+                <td>{{employ.salary}}</td>
+                <td>{{employ.startDate}}</td>
+                <td><span class="material-symbols-outlined"  (click)="deleteEmp(employ.Id)">delete</span></td>
+                <td><span class="material-symbols-outlined" (click)="edit(employ.Id)">edit</span></td>
+            </tr>
+        </table>
+        <div>
+            <button routerLink="/adduser">+ Add User</button>
+            <span class="material-symbols-outlined"> search </span>
+        </div>
+    </div> 
+</div>

@@ -1,0 +1,108 @@
+<div class="form-content">
+    <form class="form">
+        <div class="form-head">Employee Payroll Form</div>
+        <div class="row-content">
+            <label for="name" class="label text">First Name</label>
+           
+            <input type="text" name="name" id="name"  class="input required" [(ngModel)]="employee.name"><br/>
+        </div>
+        <!-- <div class="row-content">
+            <label for="lastName" class="label text">last Name</label>
+            
+            <input type="text" name="lastName" id="lastName" class="input required" [(ngModel)]="employee.lastName"><br />
+        
+            </div> -->
+            <!-- <div class="row-content">
+                <label for="lastName" class="label text">adress</label>
+                <input type="text" name="address" id="address" class="input required" [(ngModel)]="employee.address"><br />
+            </div> -->
+
+        <div class="row-content">
+            <label class="label text" for="profile">Profile Image</label>
+            <div class="profile-radio-content">
+                <label>
+                   
+                    <input type="radio" id="profile2" name="profile" value="../../../assets/men1.png"
+                        [(ngModel)]="employee.profilePic" required>
+                    <img class="profile" id="image1" src="../../../assets/profile-images/Ellipse -8.png">
+                </label>
+                <label>
+                    <input type="radio" id="profile2" name="profile" value="../../../assets/men2.png"
+                        [(ngModel)]="employee.profilePic" required>
+                    <img class="profile" id="image2" src="../../../assets/profile-images/Ellipse -2.png">
+                </label>
+                <label>
+                    <input type="radio" id="profile3" name="profile" value="../../../assets/fm.png"
+                        [(ngModel)]="employee.profilePic" required>
+                    <img class="profile" id="image3" src="../../../assets/profile-images/Ellipse -1.png">
+                </label>
+                <label>
+                    <input type="radio" id="profile4" name="profile" value="../../../assets/men3.png"
+                        [(ngModel)]="employee.profilePic" required>
+                    <img class="profile" id="image4" src="../../../assets/profile-images/Ellipse -9.png">
+                </label>
+            </div>
+        </div>
+
+        <div class="row-content">
+            <label class="label text" for="gender">Gender</label>
+            <div>
+                <input type="radio" id="male" name="gender" value="Male" [(ngModel)]="employee.gender" required  >
+                <label class="text" for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="Female" [(ngModel)]="employee.gender" required>
+                <label class="text" for="female">Female</label>
+            </div>
+        </div>
+
+        <div class="row-content">
+            <label class="label text" for="departments">Department</label>
+            <div>
+              
+                <input type="checkbox" class="checkbox" id="hr" (click)="getVal('HR')"
+                    [ngModel]="employee.departments=='HR'" name="department1" value="HR">
+                <label for="hr">HR</label>
+
+                <input type="checkbox" class="checkbox" id="sales" (click)="getVal('Sales')"
+                    [ngModel]="employee.departments=='Sales'" name="department2" value="Sales">
+                <label for="sales">Sales</label>
+                <input type="checkbox" class="checkbox" id="finance" (click)="getVal('Finance')"
+                    [ngModel]="employee.departments=='Finance'" name="department3" value="Finance">
+                <label for="finance">Finance</label>
+                <input type="checkbox" class="checkbox" id="engineer" (click)="getVal('Engineer')"
+                    [ngModel]="employee.departments=='Engineer'" name="department4" value="Engineer">
+                <label for="engineer">Engineer</label>
+                <input type="checkbox" class="checkbox" id="others" (click)="getVal('Others')"
+                    [ngModel]="employee.departments=='Others'" name="department5" value="Others">
+                <label for="others">Others</label>
+            </div>
+        </div>
+
+        <div class="row-content">
+            <label class="label text" for="salary">Choose Your Salary: </label>
+            <input class="input required" type="range" name="salary" id="salary" min="300000" max="800000" step="100"
+                value="400000" [(ngModel)]="employee.salary">
+            <output class="salary-output text" for="salary">800000</output>
+        </div>
+
+        <div class="row-content">
+            <label class="label text" for="StartDate">Start Date</label>
+            <input type="date" class="startDate" id="StartDate" name="date" [(ngModel)]="employee.startDate" required>
+        </div>
+
+        <div class="row-content">
+            <label class="label text" for="notes">Notes</label>
+            <textarea id="notes" class="input required" name="Notes" placeholder="Tell Something About Yourself."
+                style="height:100px" [(ngModel)]="employee.note"></textarea>
+        </div>
+
+        <div class="buttonParent">
+            <div class="submit-reset">
+                <button type="submit" class="button submitButton" id="submitButton" (click)="addEmployeeData()">Submit</button>
+                <button type="reset" class="resetButton button">Reset</button>
+                <button type="text" class="resetButton button" (click)="update()">Update</button>
+                
+            </div>
+        </div>
+
+    </form>
+</div>
